@@ -838,7 +838,7 @@ body {
 }
 #header-post #toc nav > ul > li:before {
   color: #2bbc8a;
-  content: "#";
+  content: "~";
   margin-right: 8px;
 }
 #header-post #toc nav > ul > li > ul > li {
@@ -1014,7 +1014,7 @@ body {
 }
 #footer-post #toc-footer #TableOfContents > ul > li:before {
   color: #2bbc8a;
-  content: "#";
+  content: "~";
   margin-right: 8px;
 }
 #footer-post #toc-footer #TableOfContents > ul > li > ul > li {
@@ -1098,7 +1098,7 @@ article .content h2:before {
   top: -4px;
   left: -1rem;
   color: #2bbc8a;
-  content: "#";
+  content: "~";
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -1129,7 +1129,7 @@ article .content blockquote {
   margin: 1rem 10px;
   padding: 0.5em 10px;
   background: inherit;
-  color: #ccffb6;
+  color: #3abb89;
   quotes: "\201C" "\201D" "\2018" "\2019";
   font-weight: bold;
 }
@@ -1138,7 +1138,7 @@ article .content blockquote p {
 }
 article .content blockquote:before {
   margin-right: 0.25em;
-  color: #ccffb6;
+  color: #3abb89;
   content: "\201C";
   vertical-align: -0.4em;
   font-size: 2em;
