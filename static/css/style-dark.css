@@ -422,6 +422,7 @@ body table {
   font-size: 12px;
   overflow: auto;
   display: block;
+  border: 1px #666;
 }
 body th {
   padding: 8px;
@@ -432,7 +433,7 @@ body th {
 }
 body td {
   padding: 0 8px;
-  border-bottom: none;
+  border-bottom: 1px dashed #4d4d4d;
 }
 @font-face {
   font-style: normal;
