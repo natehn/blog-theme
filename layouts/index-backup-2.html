@@ -3,13 +3,22 @@
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description }}
   {{ end }}
-  <p>You can also find me on <a href="https://nthnh.bandcamp.com/" target="_blank"> bandcamp</a>, <a href="https://twitter.com/natehn_" target="_blank"> twitter</a>, and <a href="https://buttondown.email/natehn" target="_blank"> buttondown</a> - or <a href="https://natehn.com/connect"> reach out by email</a>.</p>
+  <p>You can also find me on <a href="https://nthnh.bandcamp.com/" target="_blank"> bandcamp</a>, <a href="https://twitter.com/natehn_" target="_blank"> twitter</a>, and <a href="https://buttondown.email/natehn" target="_blank"> buttondown</a> - or reach out by <a href="mailto:nathan@omg.lol" target="_blank"> email</a>.</p>
   </section>
 
   <section id="writing">
     <!-- TODO: use built in mainSections parameter https://gohugo.io/functions/where/#mainsections -->
     <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">Writings</a></span>
     {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
+    <span class="h2">Topics</span>
+    <span class="widget tagcloud">
+      {{ $AllRegularPagesCount := len .Site.RegularPages }}
+      {{ range $elem := .Site.Taxonomies.tags.Alphabetical }}
+      <a style="font-size: {{ (add 0.5 (mul 5 (div (float $elem.Count) $AllRegularPagesCount))) }}rem;" href="{{ $elem.Page.Permalink }}">
+        {{- .Page.Title -}}
+      </a>
+      {{ end }}
+    </span>
     <span class="h2">Most recent</span>
     {{ end }}
 
@@ -45,16 +54,6 @@
       {{ end }}
     </ul>
     {{ end }}
-
-    <span class="h2">Topics</span>
-    <span class="widget tagcloud">
-      {{ $AllRegularPagesCount := len .Site.RegularPages }}
-      {{ range $elem := .Site.Taxonomies.tags.Alphabetical }}
-      <a style="font-size: {{ (add 0.5 (mul 1.5 (div (float $elem.Count) $AllRegularPagesCount))) }}rem;" href="{{ $elem.Page.Permalink }}">
-        {{- .Page.Title -}}
-      </a>
-      {{ end }}
-    </span>
   </section>
 
   {{ $showProjectsList := false }}
