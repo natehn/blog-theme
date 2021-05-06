@@ -381,7 +381,7 @@ body sup,
 body sub {
   position: relative;
   vertical-align: baseline;
-  font-size: 0.75em;
+  font-size: 0.85em;/*edited from .75*/
   line-height: 0;
 }
 body sup {
@@ -391,7 +391,7 @@ body sub {
   bottom: -0.2em;
 }
 body small {
-  font-size: 0.85em;
+  font-size: 0.9em;/*edited from .85*/
 }
 body acronym,
 body abbr {
@@ -419,7 +419,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 12px;
+  font-size: 0.95em;/*edited table from 12 or 13px*/
   overflow: auto;
   display: block;
   border: 1px #757575;
@@ -429,7 +429,7 @@ body th {
   border-bottom: 1px dashed #757575;
   color: #eee;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 1.1em;/*edited from 12 or 13px*/
 }
 body td {
   padding: 0 8px;
@@ -462,11 +462,11 @@ body {
   margin: 0;
   height: 100%;
   /*background-color: #1d1f21;*/
-  background: rgb(17,18,19);
-  background: -moz-linear-gradient(90deg, rgba(17,18,19,1) 0%, rgba(33,35,37,1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(17,18,19,1) 0%, rgba(33,35,37,1) 100%);
-  background: linear-gradient(90deg, rgba(17,18,19,1) 0%, rgba(33,35,37,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#111213",endColorstr="#212325",GradientType=1); 
+ background: rgb(37,17,51);
+background: -moz-linear-gradient(90deg, rgba(37,17,51,1) 0%, rgba(46,10,10,1) 50%, rgba(12,45,48,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(37,17,51,1) 0%, rgba(46,10,10,1) 50%, rgba(12,45,48,1) 100%);
+background: linear-gradient(90deg, rgba(37,17,51,1) 0%, rgba(46,10,10,1) 50%, rgba(12,45,48,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#251133",endColorstr="#0c2d30",GradientType=1); 
   color: #c9cacc;
   font-display: swap;
   font-weight: 400;
@@ -619,7 +619,7 @@ body {
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
-  font-size: 0.8rem;
+  font-size: 0.95rem;/*edited from 0.8rem*/
 }
 #header #nav ul {
   margin: 0;
@@ -651,7 +651,8 @@ body {
   margin-right: 0;
   border-right: 0;
 }
-#header #nav ul li:last-child a {
+#header #nav ul li:last-child 
+a {
   margin-right: 0;
 }
 #header:hover #logo {
@@ -687,7 +688,7 @@ body {
   #header #nav li:not(:first-child) {
     padding-top: 1rem;
     padding-left: 70px;
-    font-size: 1rem;
+    font-size: 1.1rem;/*edited from 1.0rem*/
   }
 }
 #header-post {
@@ -841,7 +842,7 @@ body {
 }
 #header-post #toc nav > ul > li {
   color: #c9cacc;
-  font-size: 0.8rem;
+  font-size: 0.9rem;/*edited from .8*/
 }
 #header-post #toc nav > ul > li:before {
   color: #2bbc8a;
@@ -850,7 +851,7 @@ body {
 }
 #header-post #toc nav > ul > li > ul > li {
   color: #757575;
-  font-size: 0.7rem;
+  font-size: 0.8rem;/*edited from 0.7*/
 }
 #header-post #toc nav > ul > li > ul > li:before {
   color: #2bbc8a;
@@ -860,7 +861,7 @@ body {
 }
 #header-post #toc nav > ul > li > ul > li > ul > li {
   color: #525252;
-  font-size: 0.4rem;
+  font-size: 0.55rem;/*edited from 0.4em*/
 }
 #header-post #toc .toc-level-5 {
   display: none;
@@ -942,7 +943,7 @@ body {
 }
 #footer-post #nav-footer a {
   color: #2bbc8a;
-  font-size: 1em;
+  font-size: 1.2em;/*edited from 1.0em*/
 }
 #footer-post #nav-footer a:hover {
   background-image: linear-gradient(transparent, transparent 4px, #d480aa 4px, #d480aa);
@@ -1027,7 +1028,7 @@ body {
 }
 #footer-post #toc-footer #TableOfContents > ul > li > ul > li {
   color: #757575;
-  font-size: 0.7rem;
+  font-size: 0.75rem; /*edited from 0.7*/
   line-height: 15px;
 }
 #footer-post #toc-footer #TableOfContents > ul > li > ul > li:before {
@@ -1057,7 +1058,7 @@ body {
   margin-right: 16px;
   min-width: 100px;
   color: #757575;
-  font-size: 14px;
+  font-size: 15px;/*edited from 14px*/
 }
 @media (min-width: 480px) {
   .post-list .post-item {
@@ -1140,18 +1141,19 @@ article .content blockquote {
   color: #d480aa;
   quotes: "\201C" "\201D" "\2018" "\2019";
   font-weight: normal;
+  border-left: 2px solid #d480aa; /*blockquote border*/
 }
 article .content blockquote p {
   margin: 0;
 }
-article .content blockquote:before {
+/*article .content blockquote:before {
   margin-right: 0.25em;
   color: #d480aa;
   content: "\201C";
   vertical-align: -0.4em;
   font-size: 1.8em;
   line-height: 0.1em;
-}
+}*/
 article .content blockquote footer {
   margin: line-height 0;
   color: #757575;
@@ -1233,7 +1235,7 @@ article .content .caption {
   margin-right: 16px;
   min-width: 100px;
   color: #757575;
-  font-size: 14px;
+  font-size: 15px;/*edited from 14px*/
 }
 @media (min-width: 480px) {
   #archive .post-list .post-item {
@@ -1256,7 +1258,7 @@ article .content .caption {
   color: #757575;
   vertical-align: top;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;/*edited footer from 11px*/
 }
 #footer ul {
   margin: 0;

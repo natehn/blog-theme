@@ -7,37 +7,37 @@
   {{ end }}
   {{ $description := .Scratch.Get "description" }}
   <li>
-    <a class="icon" href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}">
+    <a class="icon" href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}" aria-label="Twitter">
       <i class="fab fa-twitter {{ $icon_class_name }}" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}" aria-label="LinkedIn">
       <i class="fab fa-linkedin {{ $icon_class_name }}" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject={{ .Title }}&body=Check out this article: {{ .Permalink }}">
+    <a class="icon" href="mailto:?subject={{ .Title }}&body=Check out this article: {{ .Permalink }}" aria-label="email">
       <i class="fas fa-envelope {{ $icon_class_name }}" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url={{ .Permalink }}&title={{ .Title }}">
+    <a class="icon" href="https://getpocket.com/save?url={{ .Permalink }}&title={{ .Title }}" aria-label="Pocket">
       <i class="fab fa-get-pocket {{ $icon_class_name }}" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
+    <a class="icon" href="http://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}" aria-label="Reddit">
       <i class="fab fa-reddit {{ $icon_class_name }}" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url={{ .Permalink }}&name={{ .Title }}&description={{ $description }}">
+    <a class="icon" href="http://www.tumblr.com/share/link?url={{ .Permalink }}&name={{ .Title }}&description={{ $description }}" aria-label="Tumblr">
       <i class="fab fa-tumblr {{ $icon_class_name }}" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u={{ .Permalink }}&t={{ .Title }}">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u={{ .Permalink }}&t={{ .Title }}" aria-label="Hacker News">
       <i class="fab fa-hacker-news {{ $icon_class_name }}" aria-hidden="true"></i>
     </a>
   </li>
