@@ -1,4 +1,4 @@
-.inline {
+\.inline {
   display: inline;
 }
 .block {
@@ -461,12 +461,52 @@ html {
 body {
   margin: 0;
   height: 100%;
-  /*background-color: #1d1f21;*/
- background: rgb(37,17,51);
+  /*I previously removed this*/ background-color: #1d1f21;*/
+
+/*THEMES: spring and normal background*/
+/*
+background: rgb(37,17,51);
 background: -moz-linear-gradient(90deg, rgba(37,17,51,1) 0%, rgba(46,10,10,1) 50%, rgba(12,45,48,1) 100%);
 background: -webkit-linear-gradient(90deg, rgba(37,17,51,1) 0%, rgba(46,10,10,1) 50%, rgba(12,45,48,1) 100%);
 background: linear-gradient(90deg, rgba(37,17,51,1) 0%, rgba(46,10,10,1) 50%, rgba(12,45,48,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#251133",endColorstr="#0c2d30",GradientType=1); 
+*/
+
+/*fall*/
+
+background: rgb(42,16,9);
+background: -moz-linear-gradient(108deg, rgba(42,16,9,1) 13%, rgba(37,22,7,1) 50%, rgba(43,29,1,1) 86%);
+background: -webkit-linear-gradient(108deg, rgba(42,16,9,1) 13%, rgba(37,22,7,1) 50%, rgba(43,29,1,1) 86%);
+background: linear-gradient(108deg, rgba(42,16,9,1) 13%, rgba(37,22,7,1) 50%, rgba(43,29,1,1) 86%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a1009",endColorstr="#2b1d01",GradientType=1); 
+
+
+/*winter*/
+/* still messing around 
+ background: rgb(108,179,182);
+background: -moz-linear-gradient(90deg, rgba(108,179,182,1) 0%, rgba(144,48,127,1) 1%, rgba(2,15,28,1) 2%, rgba(13,2,23,1) 53%, rgba(38,3,39,1) 93%, rgba(58,64,142,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(108,179,182,1) 0%, rgba(144,48,127,1) 1%, rgba(2,15,28,1) 2%, rgba(13,2,23,1) 53%, rgba(38,3,39,1) 93%, rgba(58,64,142,1) 100%);
+background: linear-gradient(90deg, rgba(108,179,182,1) 0%, rgba(144,48,127,1) 1%, rgba(2,15,28,1) 2%, rgba(13,2,23,1) 53%, rgba(38,3,39,1) 93%, rgba(58,64,142,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6cb3b6",endColorstr="#3a408e",GradientType=1); 
+*/
+/*old
+background: rgb(24,5,43);
+background: -moz-linear-gradient(180deg, rgba(24,5,43,1) 0%, rgba(7,20,37,1) 21%, rgba(12,1,26,1) 63%, rgba(5,11,44,1) 88%, rgba(24,5,43,1) 100%);
+background: -webkit-linear-gradient(180deg, rgba(24,5,43,1) 0%, rgba(7,20,37,1) 21%, rgba(12,1,26,1) 63%, rgba(5,11,44,1) 88%, rgba(24,5,43,1) 100%);
+background: linear-gradient(180deg, rgba(24,5,43,1) 0%, rgba(7,20,37,1) 21%, rgba(12,1,26,1) 63%, rgba(5,11,44,1) 88%, rgba(24,5,43,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#18052b",endColorstr="#18052b",GradientType=1); 
+*/
+
+/*summer*/
+/*
+background: rgb(178,182,108);
+background: -moz-linear-gradient(90deg, rgba(178,182,108,1) 0%, rgba(161,67,0,1) 3%, rgba(22,28,2,1) 6%, rgba(23,19,2,1) 53%, rgba(39,23,3,1) 88%, rgba(29,42,25,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(178,182,108,1) 0%, rgba(161,67,0,1) 3%, rgba(22,28,2,1) 6%, rgba(23,19,2,1) 53%, rgba(39,23,3,1) 88%, rgba(29,42,25,1) 100%);
+background: linear-gradient(90deg, rgba(178,182,108,1) 0%, rgba(161,67,0,1) 3%, rgba(22,28,2,1) 6%, rgba(23,19,2,1) 53%, rgba(39,23,3,1) 88%, rgba(29,42,25,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b66c",endColorstr="#1d2a19",GradientType=1); 
+*/
+
+/*continued...*/
   color: #c9cacc;
   font-display: swap;
   font-weight: 400;
@@ -1590,4 +1630,15 @@ code {
 }
 .highlight .line {
   height: 22px;
+}
+
+/*added with hugo-wiki*/
+
+/* wiki list */
+.wiki-title {
+    text-transform: capitalize;
+}
+
+.wiki-description {
+
 }
