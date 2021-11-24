@@ -1653,13 +1653,12 @@ code {
     transition: width 0.4s ease-in-out;
     font-family: "JetBrains Mono", monospace;
     border-radius: 3px;
-    border: 2px solid rgba(94, 94, 94, 0.2);
-    font-size: 0.95em;
+    font-size: 0.85em;
 }
 
 .lieu-search:focus {
     width: 50%;
-    border: 2px solid rgba(94, 94, 94, 0.5);
+    border: 2px solid rgba(94, 94, 94, 0.5) 
 }
 
 .lieu-button {
