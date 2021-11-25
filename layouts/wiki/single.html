@@ -43,7 +43,8 @@
     </div>
   {{ end }}
     <div class="content" itemprop="articleBody">
-      {{ .Content}}
+     <!--{{ .Content}}-->
+     {{ .Content | replaceRE `\[\[(\S*)\]\]` "<a href='/wiki/$1'>$1</a>" | replaceRE `\[\[(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2'>$1 $2</a>" | replaceRE `\[\[(\S*)\s(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2-$3'>$1 $2 $3</a>" | replaceRE `\[\[(\S*)\s(\S*)\s(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2-$3-$4'>$1 $2 $3 $4</a>" | safeHTML }}
     </div>
   </article>
 
