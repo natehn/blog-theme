@@ -1,3 +1,12 @@
+body {
+  --pri-color: #2bbc8a; /*originally green, var(--pri-color)*/
+  --sec-color: #d480aa; /*originally pink, var(--sec-color)*/
+  --bg-1: #01160e;
+  --bg-3: #1b0e15;
+  --bg-2: #010715;
+  --bg-4: #15061f;
+}
+
 \.inline {
   display: inline;
 }
@@ -321,7 +330,7 @@ body .h1 {
   display: block;
   margin-top: 3rem;
   margin-bottom: 1rem;
-  color: #2bbc8a;
+  color: var(--pri-color);
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
@@ -458,55 +467,31 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
+
+/*animated gradient background*/
+
+body {
+        background-color: #1d1f21;
+	background: linear-gradient(-90deg, var(--bg-1), var(--bg-2), var(--bg-3), var(--bg-4));
+	background-size: 400% 400%;
+	animation: gradient 90s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 body {
   margin: 0;
   height: 100%;
-  /*I previously removed this*/ background-color: #1d1f21;*/
-
-/*THEMES: spring and normal background*/
-/*
-background: rgb(37,17,51);
-background: -moz-linear-gradient(90deg, rgba(37,17,51,1) 0%, rgba(46,10,10,1) 50%, rgba(12,45,48,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(37,17,51,1) 0%, rgba(46,10,10,1) 50%, rgba(12,45,48,1) 100%);
-background: linear-gradient(90deg, rgba(37,17,51,1) 0%, rgba(46,10,10,1) 50%, rgba(12,45,48,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#251133",endColorstr="#0c2d30",GradientType=1); 
-*/
-
-/*fall*/
-
-background: rgb(42,16,9);
-background: -moz-linear-gradient(108deg, rgba(42,16,9,1) 13%, rgba(37,22,7,1) 50%, rgba(43,29,1,1) 86%);
-background: -webkit-linear-gradient(108deg, rgba(42,16,9,1) 13%, rgba(37,22,7,1) 50%, rgba(43,29,1,1) 86%);
-background: linear-gradient(108deg, rgba(42,16,9,1) 13%, rgba(37,22,7,1) 50%, rgba(43,29,1,1) 86%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a1009",endColorstr="#2b1d01",GradientType=1); 
-
-
-/*winter*/
-/* still messing around 
- background: rgb(108,179,182);
-background: -moz-linear-gradient(90deg, rgba(108,179,182,1) 0%, rgba(144,48,127,1) 1%, rgba(2,15,28,1) 2%, rgba(13,2,23,1) 53%, rgba(38,3,39,1) 93%, rgba(58,64,142,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(108,179,182,1) 0%, rgba(144,48,127,1) 1%, rgba(2,15,28,1) 2%, rgba(13,2,23,1) 53%, rgba(38,3,39,1) 93%, rgba(58,64,142,1) 100%);
-background: linear-gradient(90deg, rgba(108,179,182,1) 0%, rgba(144,48,127,1) 1%, rgba(2,15,28,1) 2%, rgba(13,2,23,1) 53%, rgba(38,3,39,1) 93%, rgba(58,64,142,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6cb3b6",endColorstr="#3a408e",GradientType=1); 
-*/
-/*old
-background: rgb(24,5,43);
-background: -moz-linear-gradient(180deg, rgba(24,5,43,1) 0%, rgba(7,20,37,1) 21%, rgba(12,1,26,1) 63%, rgba(5,11,44,1) 88%, rgba(24,5,43,1) 100%);
-background: -webkit-linear-gradient(180deg, rgba(24,5,43,1) 0%, rgba(7,20,37,1) 21%, rgba(12,1,26,1) 63%, rgba(5,11,44,1) 88%, rgba(24,5,43,1) 100%);
-background: linear-gradient(180deg, rgba(24,5,43,1) 0%, rgba(7,20,37,1) 21%, rgba(12,1,26,1) 63%, rgba(5,11,44,1) 88%, rgba(24,5,43,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#18052b",endColorstr="#18052b",GradientType=1); 
-*/
-
-/*summer*/
-/*
-background: rgb(178,182,108);
-background: -moz-linear-gradient(90deg, rgba(178,182,108,1) 0%, rgba(161,67,0,1) 3%, rgba(22,28,2,1) 6%, rgba(23,19,2,1) 53%, rgba(39,23,3,1) 88%, rgba(29,42,25,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(178,182,108,1) 0%, rgba(161,67,0,1) 3%, rgba(22,28,2,1) 6%, rgba(23,19,2,1) 53%, rgba(39,23,3,1) 88%, rgba(29,42,25,1) 100%);
-background: linear-gradient(90deg, rgba(178,182,108,1) 0%, rgba(161,67,0,1) 3%, rgba(22,28,2,1) 6%, rgba(23,19,2,1) 53%, rgba(39,23,3,1) 88%, rgba(29,42,25,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b66c",endColorstr="#1d2a19",GradientType=1); 
-*/
-
-/*continued...*/
   color: #c9cacc;
   font-display: swap;
   font-weight: 400;
@@ -546,14 +531,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b66c",endCo
   background-repeat: repeat-x;
 }
 .content a:hover {
-  background-image: /*previously 4px*/linear-gradient(transparent, transparent 3px, #d480aa 3px, #d480aa);
-  color: #d480aa; /* my edit */
+  background-image: /*previously 4px*/linear-gradient(transparent, transparent 3px, var(--sec-color) 3px, var(--sec-color));
+  color: var(--sec-color); /* my edit */
 }
 .content a.icon {
   background: none;
 }
 .content a.icon:hover {
-  color: #d480aa;
+  color: var(--sec-color);
 }
 .content h1 a,
 .content .h1 a,
@@ -573,7 +558,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b66c",endCo
 .content h4 a:hover,
 .content h5 a:hover,
 .content h6 a:hover {
-  background-image: linear-gradient(transparent, transparent 6px, #d480aa 6px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 6px, var(--sec-color) 6px, var(--sec-color));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -584,7 +569,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b66c",endCo
   text-decoration: none;
 }
 .content h6 a:hover {
-  background-image: linear-gradient(transparent, transparent 6px, #d480aa 6px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 6px, var(--sec-color) 6px, var(--sec-color));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -655,7 +640,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b66c",endCo
   -webkit-filter: grayscale(100%);
 }
 #header #nav {
-  color: #2bbc8a;
+  color: var(--pri-color);
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
@@ -669,10 +654,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b66c",endCo
 }
 #header #nav ul a {
   margin-right: 15px;
-  color: #2bbc8a;
+  color: var(--pri-color);
 }
 #header #nav ul a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, #2bbc8a 5px, #2bbc8a);
+  background-image: linear-gradient(transparent, transparent 5px, var(--pri-color) 5px, var(--pri-color));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -681,7 +666,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2b66c",endCo
   display: inline-block;
   margin-right: 15px;
   border-right: 1px dotted;
-  border-color: #2bbc8a;
+  border-color: var(--pri-color);
   vertical-align: middle;
 }
 #header #nav ul .icon {
@@ -748,7 +733,7 @@ a {
   background: none;
 }
 #header-post a.icon:hover {
-  color: #d480aa;
+  color: var(--sec-color);
 }
 #header-post nav ul {
   display: block;
@@ -786,7 +771,7 @@ a {
   margin-left: 15px;
 }
 #header-post #menu-icon:hover {
-  color: #2bbc8a;
+  color: var(--pri-color);
 }
 #header-post #menu-icon-tablet {
   float: right;
@@ -794,7 +779,7 @@ a {
   margin-left: 15px;
 }
 #header-post #menu-icon-tablet:hover {
-  color: #2bbc8a;
+  color: var(--pri-color);
 }
 #header-post #top-icon-tablet {
   position: fixed;
@@ -804,17 +789,17 @@ a {
   margin-left: 15px;
 }
 #header-post #top-icon-tablet:hover {
-  color: #2bbc8a;
+  color: var(--pri-color);
 }
 #header-post .active {
-  color: #2bbc8a;
+  color: var(--pri-color);
 }
 #header-post #menu {
   visibility: hidden;
   margin-right: 2rem;
 }
 #header-post #nav {
-  color: #2bbc8a;
+  color: var(--pri-color);
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
@@ -825,16 +810,16 @@ a {
 }
 #header-post #nav ul a {
   margin-right: 15px;
-  color: #2bbc8a;
+  color: var(--pri-color);
 }
 #header-post #nav ul a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, #2bbc8a 5px, #2bbc8a);
+  background-image: linear-gradient(transparent, transparent 5px, var(--pri-color) 5px, var(--pri-color));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
 #header-post #nav ul li {
-  border-right: 1px dotted #2bbc8a;
+  border-right: 1px dotted var(--pri-color);
 }
 #header-post #nav ul li:last-child {
   margin-right: 0;
@@ -878,14 +863,14 @@ a {
   text-align: right;
 }
 #header-post #toc a:hover {
-  color: #d480aa;
+  color: var(--sec-color);
 }
 #header-post #toc nav > ul > li {
   color: #c9cacc;
   font-size: 0.9rem;/*edited from .8*/
 }
 #header-post #toc nav > ul > li:before {
-  color: #2bbc8a;
+  color: var(--pri-color);
   content: "~";
   margin-right: 8px;
 }
@@ -894,7 +879,7 @@ a {
   font-size: 0.8rem;/*edited from 0.7*/
 }
 #header-post #toc nav > ul > li > ul > li:before {
-  color: #2bbc8a;
+  color: var(--pri-color);
   content: "·";
   font-weight: bold;
   margin-right: 3px;
@@ -973,7 +958,7 @@ a {
   background: none;
 }
 #footer-post a.icon:hover {
-  color: #d480aa;
+  color: var(--sec-color);
 }
 #footer-post #nav-footer {
   padding-right: 1rem;
@@ -982,15 +967,15 @@ a {
   text-align: center;
 }
 #footer-post #nav-footer a {
-  color: #2bbc8a;
+  color: var(--pri-color);
   font-size: 1.2em;/*edited from 1.0em*/
 }
 #footer-post #nav-footer a:hover {
-  background-image: linear-gradient(transparent, transparent 4px, #d480aa 4px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 4px, var(--sec-color) 4px, var(--sec-color));
   background-position: bottom;
   background-size: 100% 5px;/*smaller underline, my edit*/
   background-repeat: repeat-x;
-  color: #d480aa;
+  color: var(--sec-color);
 }
 #footer-post #nav-footer ul {
   display: table;
@@ -1018,7 +1003,7 @@ a {
 #footer-post #actions-footer a {
   display: inline-block;
   padding-left: 1rem;
-  color: #2bbc8a;
+  color: var(--pri-color);
 }
 #footer-post #share-footer {
   padding-right: 1rem;
@@ -1055,14 +1040,14 @@ a {
   line-height: 30px;
 }
 #footer-post #toc-footer a:hover {
-  color: #d480aa;
+  color: var(--sec-color);
 }
 #footer-post #toc-footer #TableOfContents > ul > li {
   color: #c9cacc;
   font-size: 0.8rem;
 }
 #footer-post #toc-footer #TableOfContents > ul > li:before {
-  color: #2bbc8a;
+  color: var(--pri-color);
   content: "~";
   margin-right: 8px;
 }
@@ -1072,7 +1057,7 @@ a {
   line-height: 15px;
 }
 #footer-post #toc-footer #TableOfContents > ul > li > ul > li:before {
-  color: #2bbc8a;
+  color: var(--pri-color);
   content: "·";
   font-weight: bold;
   margin-right: 3px;
@@ -1146,7 +1131,7 @@ article .content h2:before {
   position: absolute;
   top: -4px;
   left: -1rem;
-  color: #2bbc8a;
+  color: var(--pri-color);
   content: "~";
   font-weight: bold;
   font-size: 1.2rem;
@@ -1178,17 +1163,17 @@ article .content blockquote {
   margin: 1rem 10px;
   padding: 0.5em 10px;
   background: inherit;
-  color: #d480aa;
+  color: var(--sec-color);
   quotes: "\201C" "\201D" "\2018" "\2019";
   font-weight: normal;
-  border-left: 2px solid #d480aa; /*blockquote border*/
+  border-left: 2px solid var(--sec-color); /*blockquote border*/
 }
 article .content blockquote p {
   margin: 0;
 }
 /*article .content blockquote:before {
   margin-right: 0.25em;
-  color: #d480aa;
+  color: var(--sec-color);
   content: "\201C";
   vertical-align: -0.4em;
   font-size: 1.8em;
@@ -1238,7 +1223,7 @@ article .content .caption {
   line-height: 1.25;
 }
 .article-tag .tag-link {
-  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 10px, var(--sec-color) 10px, var(--sec-color));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -1247,7 +1232,7 @@ article .content .caption {
   content: "#";
 }
 .article-category .category-link {
-  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 10px, var(--sec-color) 10px, var(--sec-color));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -1388,7 +1373,7 @@ article .content .caption {
   -moz-border-radius: 5px;
 }
 .search-input:focus {
-  border: solid 1px #2bbc8a;
+  border: solid 1px var(--pri-color);
 }
 #search-result ul.search-result-list {
   padding: 0;
@@ -1412,8 +1397,8 @@ article .content .caption {
   font-size: 0.8em;
 }
 #search-result em.search-keyword {
-  border-bottom: 1px dashed #d480aa;
-  color: #d480aa;
+  border-bottom: 1px dashed var(--sec-color);
+  color: var(--sec-color);
   font-weight: bold;
 }
 .search-no-result {
@@ -1572,7 +1557,7 @@ code {
   margin: 1rem 0;
   padding: 10px 15px;
   border-radius: 4px;
-  background: #d480aa /*filter1*/;
+  background: var(--sec-color) /*filter1*/;
   font-family: "JetBrains Mono", monospace;
   -webkit-border-radius: 4px;
 }
@@ -1587,7 +1572,7 @@ code {
   color: #757575;
   font-style: italic;
   font-size: 0.8em;
-  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 10px, var(--sec-color) 10px, var(--sec-color));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -1613,7 +1598,7 @@ code {
   transition: opacity 0.2s ease-in;
 }
 .highlight .btn-copy:hover {
-  color: #2bbc8a;
+  color: var(--pri-color);
 }
 .highlight pre {
   margin: 0;
@@ -1646,7 +1631,7 @@ code {
 /*lieu search*/
 
 .lieu-search {
-    background-color: rgba(34, 34, 34, 0.2);
+    background-color: rgba(34, 34, 34, 0);
     color: white;
     outline: none;
     width: 33%;
@@ -1663,20 +1648,20 @@ code {
 }
 
 .lieu-button {
-    border: none;
-    outline: none;
-    background-color: #222222;
+    border: 2px solid rgba(94,94,94,0.2);
+    background-color: rgba(19, 19, 19, 0);
     color: white;
     font-family: "JetBrains Mono", monospace;
     padding: 3px 3px;
     font-size: 0.95em;
     text-align: center;
     border-radius: 3px;
-    transition-duration: 0.4s;
     display: inline-block;
     text-decoration: none;
+    font-style: italic;
 }
 
 .lieu-button:hover {
-    color: #2bbc8a;
+    color: var(--sec-color);
+    border: 2px solid var(--pri-color);
 }

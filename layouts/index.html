@@ -47,7 +47,7 @@
 
     <!--<div style="text-align: center"><span color="#999999"> Showing X of {{ len (where .Site.RegularPages "Section" "==" "posts") }} posts. <a href="https://natehn.com/posts">See more</a>. </span></div>-->
 
-    <span class="h2">Explore</span>
+    <span class="h2">Categories</span>
     <span class="widget tagcloud">
       {{ $AllRegularPagesCount := len .Site.RegularPages }}
       {{ range $elem := .Site.Taxonomies.tags.Alphabetical }}
@@ -57,6 +57,8 @@
       {{ end }}
     </span>
     {{ partial "search.html" . }}
+    <br>
+    <br>
   </section>
 
 
