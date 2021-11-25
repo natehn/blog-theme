@@ -1,4 +1,4 @@
-body {
+:root {
   --pri-color: #2bbc8a; /*originally green, var(--pri-color)*/
   --sec-color: #d480aa; /*originally pink, var(--sec-color)*/
   --bg-1: #01160e;
