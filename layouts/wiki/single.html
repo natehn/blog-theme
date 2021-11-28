@@ -44,7 +44,45 @@
   {{ end }}
     <div class="content" itemprop="articleBody">
      <!--{{ .Content}}-->
-     {{ .Content | replaceRE `\[\[(\S*)\]\]` "<a href='/wiki/$1'>$1</a>" | replaceRE `\[\[(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2'>$1 $2</a>" | replaceRE `\[\[(\S*)\s(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2-$3'>$1 $2 $3</a>" | replaceRE `\[\[(\S*)\s(\S*)\s(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2-$3-$4'>$1 $2 $3 $4</a>" | safeHTML }}
+
+<!--
+{{ .Content | 
+replaceRE `\[\[(\S*)\]\]` "<a href='/wiki/$1/'>$1</a>" | 
+replaceRE `\[\[(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2/'>$1 $2</a>" | 
+replaceRE `\[\[(\S*)\s(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2-$3/'>$1 $2 $3</a>" | 
+replaceRE `\[\[(\S*)\s(\S*)\s(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2-$3-$4/'>$1 $2 $3 $4</a>" | 
+replaceRE `\[\[(\S*)\s(\S*)\s(\S*)\s(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2-$3-$4-$5/'>$1 $2 $3 $4 $5</a>" | 
+lower | 
+safeHTML }}
+-->
+
+{{- $Content := .Content -}}
+
+{{- /* 
+//   strict match, must contains any character (except line terminators) 
+//   inside the double square brackets `[[<any-character>]]` 
+*/ -}}
+{{- $linkRE := `\[{2}(?U:.+)\]{2}` -}}
+{{- $linkFound := findRE $linkRE $Content -}}
+
+{{- /* Replace all wikilink with placeholder */ -}}
+{{- $Content = $Content | replaceRE $linkRE `<!--wikilink-->` -}}
+
+{{- range $wiki_link := $linkFound -}}
+  {{- $text := trim $wiki_link "[ ]" -}}
+  {{- $href := delimit (split ($text | lower ) " ") "-" -}}
+  
+  {{- $linkFmt := `<a href="/wiki/%s/">%s</a>` -}}
+  {{- $link := printf $linkFmt $href $text -}}
+
+  {{- /* Replace All Wikilink inside $Content */ -}} 
+  {{- $Content = replace $Content `<!--wikilink-->` $link 1 -}}
+
+{{- end -}}
+
+{{- /* Output */ -}}
+{{- $Content | safeHTML -}}
+
     </div>
   </article>
 

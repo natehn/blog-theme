@@ -3,85 +3,71 @@
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description }}
   {{ end }}
-  <p>Find me on <a href="https://nthnh.bandcamp.com/" target="_blank"> Bandcamp</a>, <a href="https://www.instagram.com/nthnh_/" target="_blank">Instagram</a>, and <a href="https://vsco.co/natehnnn/gallery" target="_blank">VSCO<a/>. <a href="mailto:nathan@omg.lol" target="_blank">Or send me an email!</a> 
-<!-- 
-    {{ if isset .Site.Params "social" }}
-      {{ $length := (len .Site.Params.social) }}
-      {{ range $index, $elem := .Site.Params.social}}
-      {{ if eq $elem.name "email" }}
-        <a class="icon" target="_blank" rel="noopener" href="mailto:{{ $elem.link }}">
-          <i class="fas fa-envelope"></i>
-        </a>
-        {{ else if eq $elem.name "rss" }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}">
-          <i class="fas fa-rss"></i>
-        </a>
-        {{ else }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}">
-          <i class="fab fa-{{ lower $elem.name }}"></i>
-        </a>
-        {{ end }}
-        {{ if (lt (add $index 2) $length) }}
-          {{- print " , " -}}
-        {{ else if (lt (add $index 1) $length) }}
-          {{- print " and " -}}
-        {{ else }}
-          {{- print "." -}}
-        {{ end }}
-      {{ end }}
--->
-      </p>
-  {{ end }}
+  <p>You can also find me on <a href="https://nthnh.bandcamp.com/" target="_blank"> bandcamp</a>, <a href="https://merveilles.town/@natehn" target="_blank">mastodon</a>, and <a href="https://twitter.com/natehn_" target="_blank">birdsite</a> - or <a href="https://natehn.com/connect"> reach out by email</a>.</p>
   </section>
 
   <section id="writing">
-    <!-- TODO: use built in mainSections parameter https://gohugo.io/functions/where/#mainsections -->
     <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">Writings</a></span>
     {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
-    <span class="h2">Topics</span>
-    <span class="widget tagcloud">
-      {{ $AllRegularPagesCount := len .Site.RegularPages }}
-      {{ range $elem := .Site.Taxonomies.tags.Alphabetical }}
-      <a style="font-size: {{ (add 0.5 (mul 5 (div (float $elem.Count) $AllRegularPagesCount))) }}rem;" href="{{ $elem.Page.Permalink }}">
-        {{- .Page.Title -}}
-      </a>
-      {{ end }}
-    </span>
     <span class="h2">Most recent</span>
     {{ end }}
 
-    {{ $showAllPostsOnHomePage := false }}
+<!--{{ $showAllPostsOnHomePage := false }}
     {{ if (isset .Site.Params "showallpostsonhomepage") }}
       {{ $showAllPostsOnHomePage = .Site.Params.ShowAllPostsOnHomePage }}
     {{ end }}
     {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+    {{ $mainPosts := (sort ( where site.RegularPages "Type" "in" site.Params.mainSections ) "Date" "desc") }}
     {{ if $showAllPostsOnHomePage }}
     <ul class="post-list">
-      {{ range (sort .Paginator.Pages "Date" "desc") }}
-        <li class="post-item">
+      {{ range (where .Data.Pages "Type" "post") }}-->
+
+<!--(.Paginate $mainPosts).Pages  
+  <li class="post-item">
           <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
           <span><a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
         </li>
       {{ end }}
     </ul>
+    {{ partial "pagination.html" . }} 
+{{ else }}-->
 
-    {{ partial "pagination.html" . }}
 
-    {{ else }}
     <ul class="post-list">
       {{ .Scratch.Set "count" 5 }}
       {{ if isset .Site.Params "postsonhomepage" }}
         {{ .Scratch.Set "count" .Site.Params.postsOnHomePage }}
       {{ end }}
-      {{ range (first (.Scratch.Get "count") (sort .Site.RegularPages "Date" "desc")) }}
+
+      <!--{{ range $mainPosts }}-->
+<!--(where .Data.Pages "type" "post")-->
+
+{{ range first 10 (where .Data.Pages "Type" "posts") }}
         <li class="post-item">
           <div class="meta"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></div>
           <span><a href="{{ .Permalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a></span>
         </li>
       {{ end }}
     </ul>
-    {{ end }}
+    <!--{{ end }}-->
+
+    <!--<div style="text-align: center"><span color="#999999"> Showing X of {{ len (where .Site.RegularPages "Section" "==" "posts") }} posts. <a href="https://natehn.com/posts">See more</a>. </span></div>-->
+
+<!--    <span class="h2">Categories</span>
+    <span class="widget tagcloud">
+      {{ $AllRegularPagesCount := len .Site.RegularPages }}
+      {{ range $elem := .Site.Taxonomies.tags.Alphabetical }}
+      <a style="font-size: {{ (add 0.5 (mul 1.5 (div (float $elem.Count) $AllRegularPagesCount))) }}rem;" href="{{ $elem.Page.Permalink }}">
+        {{- .Page.Title -}}
+      </a>
+      {{ end }}
+    </span>
+-->
+    {{ partial "search.html" . }}
+    <br>
+    <br>
   </section>
+
 
   {{ $showProjectsList := false }}
   {{ if .Site.Data.projects }}
@@ -91,7 +77,7 @@
   {{ end }}
   {{ if $showProjectsList }}
     {{ $projectsUrl := "#" }}
-    {{ if isset .Site.Params "projectsUrl" }}
+    {{ if isset .Site.Params "projectsurl" }}
       {{ $projectsUrl = .Site.Params.projectsUrl }}
     {{ end }}
   <section id="projects">
@@ -105,4 +91,5 @@
     </ul>
   </section>
   {{ end }}
+{{ end }}
 {{ end }}

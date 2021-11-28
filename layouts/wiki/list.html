@@ -2,14 +2,63 @@
 
 {{.Content}}
 
-<h2> All notes: </h2>
+<h2> Recently updated </h2>
 
-<ul>
-    {{ range .Pages }}
-    <li>
-        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+  <ul class="post-list">
+    {{ range sort (first 5 (where .Site.Pages "Type" "wiki")) "Date" "desc" }}
+    
+    <li class="post-item">
+      <div class="meta">
+        <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
+      <span>    
+        <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
+      </span>
+
     </li>
+
     {{ end }}
-</ul>
+
+
+<h2> Notes </h2>
+
+  <ul>
+
+    {{ range where .Pages.ByTitle "Params.categories" "note" }}
+    
+    <li>
+        <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
+    </li>
+
+    {{ end }}
+
+  </ul>
+
+<h2> Recipes </h2>
+
+  <ul>
+
+    {{ range where .Pages.ByTitle "Params.categories" "recipe" }}
+    
+    <li>
+        <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
+    </li>
+
+    {{ end }}
+
+  </ul>
+
+<h2> Places </h2>
+
+  <ul>
+
+    {{ range where .Pages.ByTitle "Params.categories" "place" }}
+    
+    <li>
+        <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
+    </li>
+
+    {{ end }}
+
+  </ul>
 
 {{ end }}
