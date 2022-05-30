@@ -3,7 +3,7 @@
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description }}
   {{ end }}
-  <p>You can also find me on <a href="https://nthnh.bandcamp.com/" target="_blank"> bandcamp</a>, <a href="https://merveilles.town/@natehn" target="_blank">mastodon</a>, and <a href="https://twitter.com/natehn_" target="_blank">birdsite</a> - or <a href="https://natehn.com/connect"> reach out by email</a>.</p>
+  <p>You can also find me on <a href="https://nthnh.bandcamp.com/" target="_blank"> bandcamp</a>, <a href="https://www.mixcloud.com/nthnh/" target="_blank">mixcloud</a>, <a rel="me" href="https://merveilles.town/@natehn" target="_blank">mastodon</a>, and <a href="https://twitter.com/natehn_" target="_blank">birdsite</a> - or <a href="https://natehn.com/connect"> reach out by email</a>.</p>
   </section>
 
   <section id="writing">
@@ -23,8 +23,8 @@
     {{ end }}
     </ul>
   
-  <h1> Wiki </h1>
-  <h2> Recently updated </h2>
+  <span class="h1"> <a href="/wiki">Wiki</a></span>
+  <span class="h2">Recently updated</span>
 
   <ul class="post-list">
     {{ range sort (first 5 (where .Site.Pages "Type" "wiki")) "Date" "desc" }}
@@ -32,6 +32,7 @@
     <li class="post-item">
       <div class="meta">
         <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
+      </div>
       <span>    
         <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
       </span>

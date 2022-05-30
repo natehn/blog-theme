@@ -5,6 +5,8 @@
   --bg-3: #1b0e15;
   --bg-2: #010715;
   --bg-4: #15061f;
+  color-scheme: dark;
+  scrollbar-color: #7e7e7e var(--bg-3);
 }
 
 \.inline {
@@ -348,22 +350,24 @@ body .h2 {
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem; /*previously 1rem*/
 }
 body h3 {
   color: #eee;
-  text-decoration: underline;
+  text-decoration: none; /*underline;*/
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem; /*0.9rem;*/
 }
 body h4,
 body h5,
 body h6 {
   display: inline;
-  text-decoration: none;
-  color: #ccc;
-  font-weight: bold;
-  font-size: 0.9rem;
+  text-decoration: underline; /*none;*/
+  text-decoration-style: wavy;
+  text-decoration-color: #5c5c5c;
+  color: #ccc
+  /*font-weight: bold;*/
+  font-size: 0.95rem;
 }
 body h3,
 body h4,
@@ -474,10 +478,10 @@ body {
         background-color: #1d1f21;
 	background: linear-gradient(-90deg, var(--bg-1), var(--bg-2), var(--bg-3), var(--bg-4));
 	background-size: 400% 400%;
-	animation: gradient 90s ease infinite;
+	/*animation: gradient 90s ease infinite;*/
 }
 
-@keyframes gradient {
+/*@keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
@@ -487,7 +491,7 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
-}
+}*/
 
 body {
   margin: 0;
@@ -1130,11 +1134,11 @@ article header .postdate {
 article .content h2:before {
   position: absolute;
   top: -4px;
-  left: -1rem;
+  left: -1.2rem; /*previously 1rem*/
   color: var(--pri-color);
   content: "~";
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem; /*previously 1.2rem*/
 }
 article .content img,
 article .content video {

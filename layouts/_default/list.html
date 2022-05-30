@@ -5,9 +5,11 @@
   {{.Content}}
 </article>
 
+<!-- .Paginator.Pages-->
+
 <div id="archive">
   <ul class="post-list">
-  {{ range (sort .Paginator.Pages "Date" "desc") }}
+  {{ range (sort (where .Site.RegularPages "Type" "posts") "Date" "desc") }}
     {{ $pageYear := (.Date.Format "2006") }}
     {{ if (ne $pageYear ($.Scratch.Get "year")) }}
     {{ $.Scratch.Set "year" $pageYear }}
@@ -23,6 +25,6 @@
     </li>
     {{ end }}
   </ul>
-  {{ partial "pagination.html" . }}
+  <!--{{ partial "pagination.html" . }}-->
 </div>
 {{ end }}
