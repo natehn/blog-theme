@@ -3,7 +3,7 @@
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description }}
   {{ end }}
-  <p>You can also find me on <a href="https://nthnh.bandcamp.com/" target="_blank"> bandcamp</a>, <a href="https://www.mixcloud.com/nthnh/" target="_blank">mixcloud</a>, <a rel="me" href="https://merveilles.town/@natehn" target="_blank">mastodon</a>, and <a href="https://twitter.com/natehn_" target="_blank">birdsite</a> - or <a href="https://natehn.com/connect"> reach out by email</a>.</p>
+  He is also active on <a href="https://nthnh.bandcamp.com/" target="_blank"> bandcamp</a>, <a rel="me" href="https://merveilles.town/@natehn" target="_blank">mastodon</a>, <a href="https://twitter.com/natehn_" target="_blank">birdsite</a>, and <a href="https://natehn.com/connect"> email</a>, boop beep.
   </section>
 
   <section id="writing">
@@ -22,28 +22,31 @@
         </li>
     {{ end }}
     </ul>
-  
-  <span class="h1"> <a href="/wiki">Wiki</a></span>
-  <span class="h2">Recently updated</span>
+    <br><p><font color="grey"><i>See also a list of <a href="/posts">older posts</a> or explore the <a href="/wiki">wiki</a>.</i></font></p>
+  </section>
 
-  <ul class="post-list">
+<!--  <section id="wiki">
+    <span class="h1"> <a href="/wiki">Wiki</a></span>
+    <span class="h2">Recently updated</span>
+
+    <ul class="post-list">
     {{ range sort (first 5 (where .Site.Pages "Type" "wiki")) "Date" "desc" }}
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
-      </div>
-      <span>    
-        <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
-      </span>
-
-    </li>
-
+      
+      <li class="post-item">
+        <div class="meta">
+          <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
+        </div>
+        <span>    
+          <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
+        </span>
+      </li>
     {{ end }}
+    </ul>
+    <br><p><font color="grey"><i> Explore the growing <a href="/wiki">digital garden</a>.</i></font></p>
+  </section>
+-->
 
-
-
-<!--<span class="h2">Categories</span>
+<!-- <span class="h2">Categories</span>
     <span class="widget tagcloud">
       {{ $AllRegularPagesCount := len .Site.RegularPages }}
       {{ range $elem := .Site.Taxonomies.tags.Alphabetical }}
@@ -52,7 +55,8 @@
       </a>
       {{ end }}
     </span> -->
-    
+
+  <section id="search">
     {{ partial "search.html" . }}
     <br>
     <br>

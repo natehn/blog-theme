@@ -86,12 +86,12 @@ $(document).ready(function() {
       $(window).on("scroll", function() {
         var topDistance = $(window).scrollTop();
 
-        if (topDistance > lastScrollTop){
-          // downscroll -> show menu
-          $("#footer-post").hide();
-        } else {
-          // upscroll -> hide menu
+        if (topDistance < lastScrollTop){
+          // downscroll -> show menu (oppo)
           $("#footer-post").show();
+        } else {
+          // upscroll -> hide menu (oppo)
+          $("#footer-post").hide();
         }
         lastScrollTop = topDistance;
 

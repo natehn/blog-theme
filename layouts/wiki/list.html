@@ -48,6 +48,20 @@
 
   </ul>
 
+<h2> References </h2>
+
+  <ul>
+
+    {{ range where .Pages.ByTitle "Params.categories" "reference" }}
+
+    <li>
+        <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
+    </li>
+
+    {{ end }}
+
+  </ul>
+
 <!--<h2> Places </h2>
 
   <ul>
