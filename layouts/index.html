@@ -3,11 +3,11 @@
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description }}
   {{ end }}
-  He is also active on <a href="https://nthnh.bandcamp.com/" target="_blank"> bandcamp</a>, <a rel="me" href="https://merveilles.town/@natehn" target="_blank">mastodon</a>, <a href="https://twitter.com/natehn_" target="_blank">birdsite</a>, and <a href="https://natehn.com/connect"> email</a>, boop beep.
+  He is also active on <a href="https://nthnh.bandcamp.com/" target="_blank"> bandcamp</a>, <a rel="me" href="https://merveilles.town/@natehn" target="_blank">mastodon</a>, and <a href="https://natehn.com/contact"> email</a>, boop beep.
   </section>
 
   <section id="writing">
-    <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">Writings</a></span>
+    <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">Notes</a></span>
     {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
     <span class="h2">Most recent</span>
     {{ end }}
