@@ -1278,7 +1278,8 @@ article .content .caption {
   margin-top: 0.5em;
   color: var(--dull-text);
   text-align: center;
-  font-size: 0.9em;
+  font-size: 0.7em;
+  font-style: italic;
 }
 .posttitle {
   text-transform: none;
@@ -1628,7 +1629,8 @@ code {
 .highlight figcaption {
   margin: -5px 0 5px;
   color: var(--dull-text);
-  font-size: 0.9em;
+  font-size: 0.7em;
+  font-style: italic;
   /*zoom: 1 - based on inspect recommendation */ transform: scale(1);
 }
 .highlight figcaption a {
