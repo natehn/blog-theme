@@ -45,8 +45,8 @@
     <div class="content" itemprop="articleBody">
      <!--{{ .Content}}-->
 
-<!--
-{{ .Content | 
+
+<!--{{ .Content | 
 replaceRE `\[\[(\S*)\]\]` "<a href='/wiki/$1/'>$1</a>" | 
 replaceRE `\[\[(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2/'>$1 $2</a>" | 
 replaceRE `\[\[(\S*)\s(\S*)\s(\S*)\]\]` "<a href='/wiki/$1-$2-$3/'>$1 $2 $3</a>" | 
@@ -56,9 +56,10 @@ lower |
 safeHTML }}
 -->
 
+ 
 {{- $Content := .Content -}}
 
-{{- /* 
+<!--{{- /* 
 //   strict match, must contains any character (except line terminators) 
 //   inside the double square brackets `[[<any-character>]]` 
 */ -}}
@@ -70,7 +71,7 @@ safeHTML }}
 
 {{- range $wiki_link := $linkFound -}}
   {{- $text := trim $wiki_link "[ ]" -}}
-  {{- $href := delimit (split ($text | lower ) " ") "-" -}}
+//  {{- $href := delimit (split ($text | lower ) " ") "-" -}}
   
   {{- $linkFmt := `<a href="/wiki/%s/">%s</a>` -}}
   {{- $link := printf $linkFmt $href $text -}}
@@ -79,9 +80,11 @@ safeHTML }}
   {{- $Content = replace $Content `<!--wikilink-->` $link 1 -}}
 
 {{- end -}}
+-->
 
 {{- /* Output */ -}}
 {{- $Content | safeHTML -}}
+
 
     </div>
   </article>
